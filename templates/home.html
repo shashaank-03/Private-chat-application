@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+  <h1>Private Chat Application</h1>
+    <form method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{name}}" placeholder="Type in your chat name" required>
+      <label for="code">Room code:</label>
+      <input type="text" id="code" name="code" value="{{code}}" placeholder="Type in your buddy's private room code" required>
+      <input type="submit" name="join" value="Join Room">
+    </form>
+    <hr>
+    <form method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Type in your chat name" required>
+      <input type="submit" name="create" value="Create Room">
+    </form>
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+</form>
+{% endblock %}
